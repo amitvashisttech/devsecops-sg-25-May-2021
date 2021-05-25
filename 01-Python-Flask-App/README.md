@@ -1,4 +1,5 @@
-    1  ls
+```
+    1  apt-get update; apt-get install virtualenv python-pip -y 
     2  mkdir 01-Python-Flask-App
     3  ls
     4  vim 01-Python-Flask-App/README.md 
@@ -42,3 +43,4 @@
    42  cd ..
    43  ls
    44  history > ../devsecops-sg-25-May-2021/01-Python-Flask-App/README.md 
+```
