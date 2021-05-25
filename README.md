@@ -17,4 +17,14 @@ worker2                   running (virtualbox)
 ```
 vagrant.exe ssh master
 sudo su - 
----
+```
+
+## Shutdown the VM 
+```
+vagrant.exe halt master
+```
+
+## To Destroy/Removce VM 
+```
+vagrant.exe destroy master
+```
