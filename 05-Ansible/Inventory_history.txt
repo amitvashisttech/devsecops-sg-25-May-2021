@@ -1,0 +1,68 @@
+ ```
+ 1240  cd 05-Ansible/
+ 1241  ls
+ 1242  mkdir 01-Inventory
+ 1243  ls
+ 1244  cd 01-Inventory/
+ 1245  ls
+ 1246  vim inventory
+ 1247  ls
+ 1248  apt-get install ansible -y 
+ 1249  ansible --version 
+ 1250  ls
+ 1251  ansible 172.31.0.101 -i inventory -u vagrant -m ping -k
+ 1252  apt-get install sshpass -y 
+ 1253  ansible 172.31.0.101 -i inventory -u vagrant -m ping -k
+ 1254  ansible all -i inventory -u vagrant -m ping -k
+ 1255  ssh vagrant@172.31.0.102
+ 1256  cat /root/.ssh/known_hosts 
+ 1257  ssh vagrant@172.31.0.102
+ 1258  cat /root/.ssh/known_hosts 
+ 1259  ansible all -i inventory -u vagrant -m ping -k
+ 1260  ip addr 
+ 1261  ssh vagrant@172.31.0.100
+ 1262  vim /etc/ssh/sshd_config 
+ 1263  service sshd restart 
+ 1264  ansible all -i inventory -u vagrant -m ping -k
+ 1265  ansible 172.31.0.102 -i inventory -u vagrant -m ping -k
+ 1266  ansible 172.31.0.104 -i inventory -u vagrant -m ping -k
+ 1267  vim inventory 
+ 1268  ansible web -i inventory -u vagrant -m ping -k
+ 1269  vim inventory 
+ 1270  ansible web -i inventory -u vagrant -m ping -k
+ 1271  ansible all -i inventory -u vagrant -m ping -k
+ 1272  vim inventory 
+ 1273  ansible all -i inventory -u vagrant -m ping -k
+ 1274  ansible web -i inventory -u vagrant -m ping -k
+ 1275  ansible db -i inventory -u vagrant -m ping -k
+ 1276  ansible ansible -i inventory -u vagrant -m ping -k
+ 1277  vim inventory 
+ 1278  ansible all -i inventory -u vagrant -m ping -k
+ 1279  vim inventory 
+ 1280  ls
+ 1281  ansible datacenter -i inventory -m ping 
+ 1282  vim inventory 
+ 1283  ls
+ 1284  ansible web:db -i inventory -m ping 
+ 1285  ansible 'web:&db' -i inventory -m ping 
+ 1286  ansible 'web:&ansible' -i inventory -m ping 
+ 1287  ansible 'web:datacenter' -i inventory -m ping 
+ 1288  ansible 'web:&datacenter' -i inventory -m ping 
+ 1289  ansible 'web:&datacenter:!ansible' -i inventory -m ping 
+ 1290  vim inventory 
+ 1291  ls
+ 1292  cat /etc/hosts
+ 1293  vim inventory 
+ 1294  ls
+ 1295  vim /etc/hosts
+ 1296  ansible all -i inventory -m ping 
+ 1297  ansible datacenter -i inventory -m ping 
+ 1298  ansible 'datacenter' -i inventory -m ping 
+ 1299  vim inventory 
+ 1300  ansible datacenter -i inventory -m ping 
+ 1301  vim inventory 
+ 1302  ansible datacenter -i inventory -m ping 
+ 1303  cd ..
+ 1304  ls
+ 1305  history > Inventory_history.txt
+```
