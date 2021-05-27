@@ -1,0 +1,37 @@
+node('master') {
+    
+    stage('git-checkout') {
+        git branch: 'main', url: 'https://github.com/amitvashisttech/devsecops-sg-25-May-2021.git'
+    }
+    
+    // Project Variables 
+    def project_path = "04-App-Code"
+    
+    dir(project_path) {
+        stage('Maven Clean') {
+        sh '''mvn clean'''
+        }
+    
+    
+      
+        stage('Maven Compile') {
+        sh '''mvn compile'''
+        }
+        
+          
+        stage('Maven Test') {
+        sh '''mvn test'''
+        }
+        
+          
+        stage('Maven Package') {
+        sh '''mvn package'''
+        }
+        
+        
+        stage('Archive WAR Package') {
+        archive 'target/*.war'
+        }
+        
+    }
+}
