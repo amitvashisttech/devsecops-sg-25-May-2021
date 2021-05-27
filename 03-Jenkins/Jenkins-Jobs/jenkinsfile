@@ -1,6 +1,6 @@
 node('master') {
     
-    stage('git-checkout') {
+    stage('Git-Code-Checkout') {
         git branch: 'main', url: 'https://github.com/amitvashisttech/devsecops-sg-25-May-2021.git'
     }
     
