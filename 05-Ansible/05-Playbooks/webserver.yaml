@@ -23,3 +23,12 @@
   tasks: 
   - name: Install Python Packages  
     apt: name=python-pip state=present 
+
+
+
+- hosts: 'db:web'
+  #sudo: yes
+  become: yes
+  tasks: 
+  - name: Copy Common files 
+    copy: src=files/common.html dest=/tmp/common.html
