@@ -1,0 +1,4 @@
+---
+- hosts: all
+- include: webserver.yaml tags=web
+- include: dbservers.yaml tags=db

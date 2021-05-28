@@ -1,0 +1,6 @@
+---
+# vars file for webserver
+
+doc_root: "/var/www/html/mywebappv1"
+username: "Ansible-Roles"
+

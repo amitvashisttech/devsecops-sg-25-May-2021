@@ -1,0 +1,12 @@
+---
+- hosts: db
+  name: "Databases Pre Installation Tasks"
+  pre_tasks: 
+  - name: "Hey Task"
+    shell: echo "Hey Pre Task" > /tmp/pre.txt
+  roles:
+  - firewalld
+  - server-common
+  post_tasks: 
+  - name: "Hey Post Task"
+    shell: echo "Hey Post Task" > /tmp/post.txt

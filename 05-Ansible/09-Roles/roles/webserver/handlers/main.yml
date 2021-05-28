@@ -1,0 +1,5 @@
+---
+# handlers file for webserver
+
+- name: AmitVashist
+  service: name=apache2 state=restarted

@@ -1,0 +1,3 @@
+---
+- name: Install NTP Client
+  apt: name=ntp state=present

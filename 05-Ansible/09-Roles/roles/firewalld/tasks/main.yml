@@ -1,0 +1,4 @@
+---
+# tasks file for firewalld
+- name: Stop the Firewall
+  service: name=ufw state=stopped

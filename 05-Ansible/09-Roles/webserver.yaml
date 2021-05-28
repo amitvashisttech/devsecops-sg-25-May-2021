@@ -1,0 +1,6 @@
+---
+- hosts: web
+  name: "WebSever Deployment"
+  roles:
+  - firewalld
+  - webserver
