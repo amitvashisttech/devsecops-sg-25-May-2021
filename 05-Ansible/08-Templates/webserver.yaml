@@ -1,12 +1,11 @@
 ---
-
-# This is going to be our first playbook 
-
-
 - hosts: web
   #sudo: yes
   become: yes
-  tasks: 
+  vars: 
+    doc_root: "/var/www/html/mywebappv1"
+    username: "Ansible"
+  tasks:
   - name: Install Apache Web Packages
     apt: name=apache2 state=present
     when: ansible_os_family == "Debian"
@@ -23,6 +22,8 @@
     service: name=httpd state=started enabled=True 
     when: ansible_os_family == "RedHat"
 
+  - name: Create a Dcoument Root Directory
+    file: path={{doc_root}} state=directory mode=0755
 
   - name: Deploy Apache New Port Config
     copy: src=files/ports.conf dest=/etc/apache2/ports.conf
@@ -30,7 +31,7 @@
       - AmitVashist
 
   - name: Common File Deployment
-    copy: src=files/common.html dest=/var/www/html/amitvashist7/common.html
+    copy: src=files/common.html dest={{doc_root}}/common.html
     notify: 
       - AmitVashist
     register: result
@@ -39,13 +40,8 @@
   - debug: msg="Hey Amit I'm unable to locate the file"
     when: result|failed
 
-
-  - name: Create a Directory
-    file: path=/var/www/html/amitvashist7 state=directory mode=0755
-
-  - name: Common File Deployment
-    copy: src=files/common.html dest=/var/www/html/amitvashist7/common.html
-    when: result|failed
+  - name: Deploy a Template web page
+    template: src=templates/index.j2 dest={{doc_root}}/index.html
 
   handlers:
   - name: AmitVashist
