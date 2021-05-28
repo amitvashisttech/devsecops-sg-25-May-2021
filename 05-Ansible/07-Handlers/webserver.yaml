@@ -1,0 +1,50 @@
+---
+
+# This is going to be our first playbook 
+
+
+- hosts: web
+  #sudo: yes
+  become: yes
+  tasks: 
+  - name: Install Apache Web Packages
+    apt: name=apache2 state=present
+    when: ansible_os_family == "Debian"
+
+  - name: Start Apache Web Service 
+    service: name=apache2 state=started enabled=True 
+    when: ansible_os_family == "Debian"
+
+  - name: Install HTTPD Web Packages
+    yum: name=httpd state=present
+    when: ansible_os_family == "RedHat"
+
+  - name: Start HTTPD Web Service 
+    service: name=httpd state=started enabled=True 
+    when: ansible_os_family == "RedHat"
+
+
+  - name: Deploy Apache New Port Config
+    copy: src=files/ports.conf dest=/etc/apache2/ports.conf
+    notify: 
+      - AmitVashist
+
+  - name: Common File Deployment
+    copy: src=files/common.html dest=/var/www/html/amitvashist7/common.html
+    register: result
+    ignore_errors: yes
+
+  - debug: msg="Hey Amit I'm unable to locate the file"
+    when: result|failed
+
+
+  - name: Create a Directory
+    file: path=/var/www/html/amitvashist7 state=directory mode=0755
+
+  - name: Common File Deployment
+    copy: src=files/common.html dest=/var/www/html/amitvashist7/common.html
+    when: result|failed
+
+  handlers:
+  - name: AmitVashist
+    service: name=apache2 state=restarted
