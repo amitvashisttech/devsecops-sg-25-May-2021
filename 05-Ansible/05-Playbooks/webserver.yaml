@@ -1,0 +1,25 @@
+---
+
+# This is going to be our first playbook 
+
+
+- hosts: web
+  #sudo: yes
+  become: yes
+  tasks: 
+  - name: Install Apache Web Packages
+    apt: name=apache2 state=present
+
+  - name: Start Apache Web Service 
+    service: name=apache2 state=started enabled=True 
+
+
+
+
+
+- hosts: db
+  #sudo: yes
+  become: yes
+  tasks: 
+  - name: Install Python Packages  
+    apt: name=python-pip state=present 
