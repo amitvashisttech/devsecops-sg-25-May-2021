@@ -24,3 +24,30 @@
  2030  cd 06-Terraform/
  2036  history | grep -i terraform  > History.txt
 ```
+
+
+# Terraform CLI 
+
+```
+
+ 2058  terraform init
+ 2059  terraform plan
+ 2060  terraform plan -out build-plan
+ 2061  ls
+ 2062  file build-plan
+ 2063  terraform show build-plan
+ 2064  cat build-plan
+ 2065  terraform show build-plan
+ 2066  terraform apply build-plan
+ 2067  ls
+ 2068  terraform plan destroy -out destory-plan
+ 2069  terraform plan -destroy -out destory-plan
+ 2070  terraform show
+ 2071  terraform apply
+ 2072  terraform apply --auto-approve
+ 2073  terraform show
+ 2074  terraform refresh
+ 2075  terraform show
+ 2076  terraform apply
+
+```
