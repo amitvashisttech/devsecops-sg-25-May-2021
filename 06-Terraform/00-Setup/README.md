@@ -10,7 +10,7 @@
 ==>  export PATH=$PATH:/usr/bin/terraform
 ==>  echo "export PATH=$PATH:/usr/bin/terraform" >>  ~/.bashrc
 ==>  source  ~/.bashrc
-==>  teraform --version
+==>  terraform --version
 ```
 
 ## Step2: Setup an AWS Account 
