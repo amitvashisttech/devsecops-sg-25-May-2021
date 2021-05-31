@@ -1,0 +1,26 @@
+```
+ 1938  cd 06-Terraform/
+ 1942  wget https://releases.hashicorp.com/terraform/0.12.24/terraform_0.12.24_linux_amd64.zip
+ 1945  unzip terraform_0.12.24_linux_amd64.zip 
+ 1947  rm -rf terraform_0.12.24_linux_amd64.zip 
+ 1949  mv terraform /usr/bin/terraform
+ 1950  chmod +x /usr/bin/terraform
+ 1951  export PATH=$PATH:/usr/bin/terraform
+ 1952  echo "export PATH=$PATH:/usr/bin/terraform" >>  ~/.bashrc
+ 1954  terraform --version 
+ 1965  terraform version
+ 1979  cd 06-Terraform/
+ 1985  terraform init 
+ 1987  du -sh .terraform
+ 1988  cd .terraform/
+ 1998  terraform apply 
+ 2001  terraform show 
+ 2002  terraform apply 
+ 2006  terraform destroy
+ 2016  cd 06-Terraform/
+ 2020  mv .terraform /root/
+ 2022  rm -rf terraform.tfstate* 
+ 2028  git add . ; git commit -m "06-Terraform"; git push 
+ 2030  cd 06-Terraform/
+ 2036  history | grep -i terraform  > History.txt
+```
