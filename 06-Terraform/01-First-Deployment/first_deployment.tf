@@ -6,7 +6,10 @@ provider "aws" {
 }
 
 resource "aws_instance" "web" {
-  ami           = "ami-01aab85a5e4a5a0fe"
+  # Ubuntu 16.04
+  #ami           = "ami-0d563aeddd4be7fff"
+  # Amzone Linux
+  ami           = "ami-077e31c4939f6a2f3"
   instance_type = "t2.micro"
 
   tags = {
