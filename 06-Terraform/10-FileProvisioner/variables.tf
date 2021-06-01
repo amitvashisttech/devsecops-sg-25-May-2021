@@ -1,14 +1,14 @@
 variable "key_name" {
-  default = "terraform-key"
+  default = "terraform-key-pair"
 }
 
 variable "pvt_key_name" {
-  default = "/root/.ssh/terraform-pvt-key.pem"
+  default = "/root/.ssh/amit-personal-aws.pem"
 }
 
 
 variable "sg_id" {
-  default = "sg-0d3c28ab8c6633258"
+  default = "sg-0ba7d2699a8e28cf7"
 }
 
 variable "region" {
