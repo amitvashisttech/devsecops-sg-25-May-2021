@@ -1,0 +1,88 @@
+```
+    1  docker version 
+    2  ls
+    3  docker ps 
+    4  docker images 
+    5  docker run ubuntu echo "Hello World"
+    6  docker ps 
+    7  docker ps -a
+    8  docker run ubuntu echo "Hello World"
+    9  docker run ubuntu echo "Hey Amit"
+   10  docker ps 
+   11  docker ps -a
+   12  history 
+   13  docker run -it ubuntu 
+   14  cat /etc/*-release 
+   15  docker images 
+   16  docker run -it ubuntu 
+   17  docker run -it ubuntu:16.04
+   18  docker images 
+   19  docker ps 
+   20  docker ps -a
+   21  docker run -it ubuntu:16.04 
+   22  docker ps 
+   23  docker ps -a
+   24  docker inspect fa0f6e93ab7f
+   25  docker run -itd --name test-job-1 ubuntu:16.04 
+   26  docker ps 
+   27  docker inspect test-job-1
+   28  docker run -itd --name test-job-1 ubuntu:16.04 
+   29  docker run -itd --name test-job-2 ubuntu:16.04 
+   30  docker ps 
+   31  docker run -itd --name test-job-3 busybox 
+   32  docker ps 
+   33  docker run -d --name test-job-4 busybox sh  
+   34  docker ps 
+   35  ps -ef 
+   36  l
+   37  docker images 
+   38  docker run -i busybox sh 
+   39  as;lifjsalkd;jf
+   40  docker run -it busybox sh 
+   41  docker ps 
+   42  docker stop test-job-1
+   43  docker ps 
+   44  docker kill test-job-2
+   45  docker ps 
+   46  docker ps -a
+   47  docker ps 
+   48  docker ps -a 
+   49  docker start test-job-1
+   50  ls
+   51  docker ps 
+   52  docker attach test-job-1
+   53  docker ps 
+   54  docker kill test-job-1
+   55  ls
+   56  docker ps 
+   57  docker ps -a 
+   58  docker start test-job-1
+   59  docker ps -a
+   60  docker ps 
+   61  docker attach test-job-1
+   62  docker ps 
+   63  docker ps -a 
+   64  docker images 
+   65  docker rmi 9ff95a467e45
+   66  docker rmi 9ff95a467e45 --force 
+   67  docker images 
+   68  docker ps 
+   69  docker ps -a 
+   70  docker start test-job-1
+   71  docker ps 
+   72  docker images 
+   73  docker attach test-job-1
+   74  ls
+   75  docker ps 
+   76  docker ps -a 
+   77  docker ps -aq 
+   78  docker kill $(docker ps -aq)
+   79  docker ps -aq 
+   80  docker rm $(docker ps -aq)
+   81  docker ps -aq 
+   82  docker ps 
+   83  docker ps -a 
+   84  docker images 
+   85  docker images -q
+   86  docker rmi $(docker images -q)
+```

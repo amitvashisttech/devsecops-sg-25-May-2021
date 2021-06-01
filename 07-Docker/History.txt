@@ -1,0 +1,239 @@
+    1  docker version 
+    2  ls
+    3  docker ps 
+    4  docker images 
+    5  docker run ubuntu echo "Hello World"
+    6  docker ps 
+    7  docker ps -a
+    8  docker run ubuntu echo "Hello World"
+    9  docker run ubuntu echo "Hey Amit"
+   10  docker ps 
+   11  docker ps -a
+   12  history 
+   13  docker run -it ubuntu 
+   14  cat /etc/*-release 
+   15  docker images 
+   16  docker run -it ubuntu 
+   17  docker run -it ubuntu:16.04
+   18  docker images 
+   19  docker ps 
+   20  docker ps -a
+   21  docker run -it ubuntu:16.04 
+   22  docker ps 
+   23  docker ps -a
+   24  docker inspect fa0f6e93ab7f
+   25  docker run -itd --name test-job-1 ubuntu:16.04 
+   26  docker ps 
+   27  docker inspect test-job-1
+   28  docker run -itd --name test-job-1 ubuntu:16.04 
+   29  docker run -itd --name test-job-2 ubuntu:16.04 
+   30  docker ps 
+   31  docker run -itd --name test-job-3 busybox 
+   32  docker ps 
+   33  docker run -d --name test-job-4 busybox sh  
+   34  docker ps 
+   35  ps -ef 
+   36  l
+   37  docker images 
+   38  docker run -i busybox sh 
+   39  as;lifjsalkd;jf
+   40  docker run -it busybox sh 
+   41  docker ps 
+   42  docker stop test-job-1
+   43  docker ps 
+   44  docker kill test-job-2
+   45  docker ps 
+   46  docker ps -a
+   47  docker ps 
+   48  docker ps -a 
+   49  docker start test-job-1
+   50  ls
+   51  docker ps 
+   52  docker attach test-job-1
+   53  docker ps 
+   54  docker kill test-job-1
+   55  ls
+   56  docker ps 
+   57  docker ps -a 
+   58  docker start test-job-1
+   59  docker ps -a
+   60  docker ps 
+   61  docker attach test-job-1
+   62  docker ps 
+   63  docker ps -a 
+   64  docker images 
+   65  docker rmi 9ff95a467e45
+   66  docker rmi 9ff95a467e45 --force 
+   67  docker images 
+   68  docker ps 
+   69  docker ps -a 
+   70  docker start test-job-1
+   71  docker ps 
+   72  docker images 
+   73  docker attach test-job-1
+   74  ls
+   75  docker ps 
+   76  docker ps -a 
+   77  docker ps -aq 
+   78  docker kill $(docker ps -aq)
+   79  docker ps -aq 
+   80  docker rm $(docker ps -aq)
+   81  docker ps -aq 
+   82  docker ps 
+   83  docker ps -a 
+   84  docker images 
+   85  docker images -q
+   86  docker rmi $(docker images -q)
+   87  docker images -a 
+   88  cd /var/run/docker/
+   89  ls
+   90  cd ..
+   91  cd lib/docker/
+   92  ls
+   93  cd image/
+   94  ls
+   95  cd aufs/
+   96  ls
+   97  cd layerdb/
+   98  l
+   99  cd sha256/
+  100  ls
+  101  cd ..
+  102  ls
+  103  cd ..
+  104  ls
+  105  cd imagedb/
+  106  ls
+  107  cd content/
+  108  ls
+  109  cd sha256/
+  110  ls
+  111  cd ..
+  112  ls
+  113  cd ..
+  114  ls
+  115  cd 
+  116  ls
+  117  git clone https://github.com/amitvashisttech/devsecops-sg-25-May-2021.git
+  118  ls
+  119  cd devsecops-sg-25-May-2021/
+  120  ls
+  121  mv 07-Kubernetes 08-Kubernetes
+  122  mkdir 07-Docker
+  123  cd 07-Docker/
+  124  ls
+  125  history 
+  126  history > History.txt
+  127  ls
+  128  mkdir 01-Docker_Basic
+  129  mv History.txt 01-Docker_Basic/
+  130  ls
+  131  vim 01-Docker_Basic/
+  132  vim 01-Docker_Basic/History.txt 
+  133  ks
+  134  ls
+  135  mkdir 02-DockerImages/apache -p 
+  136  ls
+  137  cd 02-DockerImages/
+  138  ls
+  139  cd apache/
+  140  ls
+  141  vim Dockerfile
+  142  ls
+  143  docker build -t testapache:v1 . 
+  144  ls
+  145  docker images 
+  146  docker run -d --name web-01 testapache:v1
+  147  docker ps 
+  148  cat Dockerfile 
+  149  docker ps 
+  150  docker inspect web-01
+  151  curl 172.17.0.2
+  152  ls
+  153  vim index.html
+  154  ls
+  155  vim Dockerfile 
+  156  ls
+  157  docker build -t testapache:v2 . 
+  158  docker images 
+  159  docker run -d --name web-02 testapache:v2
+  160  docker ps 
+  161  curl 172.17.0.3
+  162  vim index.html 
+  163  docker build -t testapache:v3 . 
+  164  docker run -d --name web-03 testapache:v3
+  165  docker ps 
+  166  curl 172.17.0.4
+  167  ip addr 
+  168  ls
+  169  docker ps 
+  170  netstat -tulnp 
+  171  docker run -d --name web-04 -p 8080:80 testapache:v3
+  172  docker ps 
+  173  netstat -tulnp 
+  174  systemctl status docker 
+  175  ls
+  176  docker ps 
+  177  docker inspect web-04
+  178  systemctl status docker 
+  179  docker run -d --name web-04 -p 8081:80 testapache:v2
+  180  docker run -d --name web-05 -p 8081:80 testapache:v2
+  181  docker run -d --name web-06 -p 8082:80 testapache:v1
+  182  docker ps 
+  183  netstat -tulnp 
+  184  cat Dockerfile 
+  185  docker ps 
+  186  docker run -d --name web-07 -P testapache:v1
+  187  docker ps 
+  188  ls
+  189  vim index.html 
+  190  ls
+  191  vim Dockerfile 
+  192  docker build -t testapache:v4 . 
+  193  docker ps 
+  194  docker run -d --name web-08 -P testapache:v4
+  195  docker ps 
+  196  netstat -tulnp
+  197  systemctl status docker 
+  198  sl
+  199  cld
+  200  ls
+  201  cd ..
+  202  ls
+  203  docker images 
+  204  docker login 
+  205  docker push testapache:v4
+  206  docker tag 2523fbdb1eb2 amitvashist7/testapache:v4
+  207  docker images 
+  208  docker push amitvashist7/testapache:v4
+  209  ls
+  210  cat /etc/os-release 
+  211  docker run -it centos:7 
+  212  docker ps 
+  213  docker images 
+  214  docker tag 13db4e61eb95 amitvashist7/testapache:v3
+  215  docker tag 6bb05f5b4a67 amitvashist7/testapache:v2
+  216  docker tag 90d0a68eaf15 amitvashist7/testapache:v1
+  217  docker push amitvashist7/testapache:v1
+  218  docker push amitvashist7/testapache:v2
+  219  docker images 
+  220  docker history ubuntu:16.04
+  221  docker push amitvashist7/testapache:v3
+  222  sl
+  223  docker kill $(docker ps -aq) 
+  224  docker rm $(docker ps -aq) 
+  225  docker iamges 
+  226  docker images 
+  227  ls
+  228  docker rmi $( docker images -q) 
+  229  docker rmi $( docker images -q)  --force
+  230  ls
+  231  docker images 
+  232  docker pull ubuntu:16.04
+  233  docker images 
+  234  docker pull amitvashist7/testapache:v1
+  235  docker pull amitvashist7/testapache:v2
+  236  ls
+  237  cd ..
+  238  ls
+  239  history > History.txt
