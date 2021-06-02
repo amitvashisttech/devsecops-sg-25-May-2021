@@ -59,7 +59,10 @@ as root:
   kubeadm join 172.31.0.100:6443 --token mr74fn.m4upjko4cfm5uwmz --discovery-token-ca-cert-hash sha256:cb406434a7f06d213eabfce7d6980b3948525d13e1c25b9f061831039bf49f52
 
 ---
+
 ```
+
+
 ## In order to intract with kubernetes cluster run the following commands
 ```
 root@master:~# mkdir -p $HOME/.kube
@@ -70,6 +73,12 @@ NAME         STATUS   ROLES    AGE    VERSION
 k8s-master   Ready    master   5m6s   v1.18.0
 ```
 
+
+## In case you lost the joining token, then please try below command to genrate new token. 
+
+```
+kubeadm token create --print-join-command
+```
 
 ## In parallel Login to both the nodes /workers & clone the repo after that execute install-node.sh. 
 
